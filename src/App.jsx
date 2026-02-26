@@ -1,13 +1,10 @@
-import Container from '@mui/material/Container';
-import DenseTable from './DenseTable'
+import Dashboard from './Dashboard';
 
 function App() {
 
   return (
     <>
-    <Container maxWidth="sm">
-      <DenseTable></DenseTable>
-    </Container>      
+      <Dashboard></Dashboard>
     </>
   )
 }

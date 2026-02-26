@@ -6,16 +6,14 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
+function createData(subjectName, monday, tuesday, wednessday, thursday, friday, saturday, sunday) {
+  return { subjectName, monday, tuesday, wednessday, thursday, friday, saturday, sunday };
 }
 
 const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData('React', 60, 60, 60, 30, 20, 10),
+  createData('CS50', 60, 60, 60, 30, 20, 10),
+  createData('Japanese', 60, 60, 60, 30, 20, 10),
 ];
 
 export default function DenseTable() {
@@ -24,26 +22,32 @@ export default function DenseTable() {
       <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
         <TableHead>
           <TableRow>
-            <TableCell>Dessert (100g serving)</TableCell>
-            <TableCell align="right">Calories</TableCell>
-            <TableCell align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-            <TableCell align="right">Protein&nbsp;(g)</TableCell>
+            <TableCell>Subject</TableCell>
+            <TableCell align="center">Monday</TableCell>
+            <TableCell align="center">Tuesday</TableCell>
+            <TableCell align="center">Wednessday</TableCell>
+            <TableCell align="center">Thursday</TableCell>
+            <TableCell align="center">Friday</TableCell>
+            <TableCell align="center">Saturday</TableCell>
+            <TableCell align="center">Sunday</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row) => (
             <TableRow
-              key={row.name}
+              key={row.subjectName}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                {row.name}
+                {row.subjectName}
               </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell>
+              <TableCell align="center">{row.monday}</TableCell>
+              <TableCell align="center">{row.tuesday}</TableCell>
+              <TableCell align="center">{row.wednessday}</TableCell>
+              <TableCell align="center">{row.thursday}</TableCell>
+              <TableCell align="center">{row.friday}</TableCell>
+              <TableCell align="center">{row.saturday}</TableCell>
+              <TableCell align="center">{row.sunday}</TableCell>
             </TableRow>
           ))}
         </TableBody>
