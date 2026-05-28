@@ -12,12 +12,13 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
+
 import DenseTable from './DenseTable'
-import TodayList from './TodayList'
+import AddSubject from './AddSubject'
 
 const drawerWidth = 240;
 
-export default function Dashboard() {
+export default function PermanentDrawerLeft() {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
@@ -27,7 +28,7 @@ export default function Dashboard() {
       >
         <Toolbar>
           <Typography variant="h6" noWrap component="div">
-            Whiteboard
+            Заголовок
           </Typography>
         </Toolbar>
       </AppBar>
@@ -43,19 +44,23 @@ export default function Dashboard() {
         variant="permanent"
         anchor="left"
       >
-        <Toolbar>Fixed-Menu-logo</Toolbar>
+        <Toolbar>
+          <Typography variant="h6" noWrap component="div">
+            Опции
+          </Typography>
+        </Toolbar>
         <Divider />
         <List>
-          {['Subject lists', 'Set colors', 'Check graphs'].map((text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                {/* <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon> */}
-                <ListItemText primary={text} />
-              </ListItemButton>
-            </ListItem>
-          ))}
+          <ListItemButton><ListItem>День</ListItem></ListItemButton>
+          <ListItemButton><ListItem>Неделя</ListItem></ListItemButton>
+          <ListItemButton><ListItem>Месяц</ListItem></ListItemButton>
+          <ListItemButton><ListItem>Год</ListItem></ListItemButton>
+        </List>
+        <Divider />
+        <List>
+          <ListItemButton><ListItem>Item 1</ListItem></ListItemButton>
+          <ListItemButton><ListItem>Item 2</ListItem></ListItemButton>
+          <ListItemButton><ListItem>Item 3</ListItem></ListItemButton>
         </List>
       </Drawer>
       <Box
@@ -63,8 +68,24 @@ export default function Dashboard() {
         sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}
       >
         <Toolbar />
-        <TodayList></TodayList>
-        <DenseTable/>
+        {/* <DenseTable></DenseTable> */}
+        <Typography sx={{ marginBottom: 2 }}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
+          enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus
+          imperdiet. Semper risus in hendrerit gravida rutrum quisque non tellus.
+          Convallis convallis tellus id interdum velit laoreet id donec ultrices.
+          Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
+          adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra
+          nibh cras. Metus vulputate eu scelerisque felis imperdiet proin fermentum
+          leo. Mauris commodo quis imperdiet massa tincidunt. Cras tincidunt lobortis
+          feugiat vivamus at augue. At augue eget arcu dictum varius duis at
+          consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
+          sapien faucibus et molestie ac.
+        </Typography>
+
+        <AddSubject></AddSubject>
+        
       </Box>
     </Box>
   );
