@@ -19,7 +19,7 @@ const rows = [
 
 ];
 
-export default function TodayList() {
+export default function TodayPage() {
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650, width: 300 }} aria-label="simple table">

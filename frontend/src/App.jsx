@@ -1,0 +1,101 @@
+import Box from '@mui/material/Box';
+import Drawer from '@mui/material/Drawer';
+import CssBaseline from '@mui/material/CssBaseline';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import List from '@mui/material/List';
+import Typography from '@mui/material/Typography';
+import Divider from '@mui/material/Divider';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+
+import { Outlet, NavLink } from "react-router";
+
+import Dashboard from './Dashboard';
+import TodayPage from './TodayPage';
+
+const drawerWidth = 240;
+
+function App() {
+
+  return (
+
+    <Box sx={{ display: 'flex' }}>
+      <CssBaseline />
+      <AppBar
+        position="fixed"
+        sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px` }}
+      >
+        <Toolbar>
+          <Typography variant="h6" noWrap component="div">
+            Заголовок
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <Drawer
+        sx={{
+          width: drawerWidth,
+          flexShrink: 0,
+          '& .MuiDrawer-paper': {
+            width: drawerWidth,
+            boxSizing: 'border-box',
+          },
+        }}
+        variant="permanent"
+        anchor="left"
+      >
+        <Toolbar>
+          <Typography variant="h6" noWrap component="div">
+            Опции
+          </Typography>
+        </Toolbar>
+        <Divider />
+        <List>
+          <ListItemButton>
+            <ListItem>
+              <NavLink to="/today" style={{textDecoration: 'none', color: 'black'}}>День</NavLink>
+            </ListItem>
+          </ListItemButton>
+          <ListItemButton>
+            <ListItem>
+              <NavLink to="/week" style={{textDecoration: 'none', color: 'black'}}>Неделя</NavLink>
+            </ListItem>
+          </ListItemButton>
+          <ListItemButton>
+            <ListItem>
+              <NavLink to="/month" style={{textDecoration: 'none', color: 'black'}}>Месяц</NavLink>
+            </ListItem>
+          </ListItemButton>
+          <ListItemButton>
+            <ListItem>
+              <NavLink to="/year" style={{textDecoration: 'none', color: 'black'}}>Год</NavLink>
+            </ListItem>
+          </ListItemButton>
+        </List>
+        <Divider />
+        <List>
+          <ListItemButton>
+            <ListItem>
+              <NavLink to="/settings" style={{textDecoration: 'none', color: 'black'}}>Настройки</NavLink>
+            </ListItem>
+          </ListItemButton>
+        </List>
+      </Drawer>
+      <Box
+        component="main"
+        sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}
+      >
+        {/* Отступ для шапки */}
+        <Toolbar />
+
+        {/* Рабочая часть */}
+        <Outlet />
+        
+      </Box>
+    </Box>
+  )
+}
+
+export default App
