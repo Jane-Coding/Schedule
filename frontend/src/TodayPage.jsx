@@ -6,26 +6,27 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
-function createData(subjectName, time) {
-  return { subjectName, time };
+function createData(subjectName, hashtags, time) {
+  return { subjectName, hashtags, time };
 }
 
 const rows = [
-  createData("React", 159),
-  createData("CS50", 20),
-  createData("Hindi", 5),
-  createData("Japanese", 25),
-  createData("Deutsch", 5),
+  createData("React", "programming", 159),
+  createData("CS50", "programming", 20),
+  createData("Hindi", "language", 5),
+  createData("Japanese", "language", 25),
+  createData("Deutsch", "language", 5),
 ];
 
 export default function TodayPage() {
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650, width: 300 }} aria-label="simple table">
+      <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
             <TableCell>Today's study</TableCell>
-            <TableCell align="right">Time spent</TableCell>
+            <TableCell>Hashtags</TableCell>
+            <TableCell align="center">Time spent</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -37,7 +38,10 @@ export default function TodayPage() {
               <TableCell component="th" scope="row">
                 {row.subjectName}
               </TableCell>
-              <TableCell align="right">{row.time}</TableCell>
+              <TableCell component="th" scope="row">
+                {row.hashtags}
+              </TableCell>
+              <TableCell align="center">{row.time}</TableCell>
             </TableRow>
           ))}
         </TableBody>
