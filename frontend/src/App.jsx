@@ -8,13 +8,8 @@ import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
 
 import { Outlet, NavLink } from "react-router";
-
-import Dashboard from "./Dashboard";
-import TodayPage from "./TodayPage";
 
 const drawerWidth = 240;
 

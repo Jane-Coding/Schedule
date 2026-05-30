@@ -48,6 +48,7 @@ export default function WeekPage() {
             <TableCell align="center">Friday</TableCell>
             <TableCell align="center">Saturday</TableCell>
             <TableCell align="center">Sunday</TableCell>
+            <TableCell align="center">Total time per week</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -66,6 +67,7 @@ export default function WeekPage() {
               <TableCell align="center">{row.friday}</TableCell>
               <TableCell align="center">{row.saturday}</TableCell>
               <TableCell align="center">{row.sunday}</TableCell>
+              <TableCell align="center"></TableCell>
             </TableRow>
           ))}
         </TableBody>
