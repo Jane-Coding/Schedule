@@ -28,7 +28,7 @@ function App() {
       >
         <Toolbar>
           <Typography variant="h6" noWrap component="div">
-            Заголовок
+            Dashboard
           </Typography>
         </Toolbar>
       </AppBar>
@@ -46,28 +46,28 @@ function App() {
       >
         <Toolbar>
           <Typography variant="h6" noWrap component="div">
-            Опции
+            Menu
           </Typography>
         </Toolbar>
         <Divider />
         <List>
           <ListItemButton component={NavLink} to="/today">
-            <ListItem>День</ListItem>
+            <ListItem>Day</ListItem>
           </ListItemButton>
           <ListItemButton component={NavLink} to="/week">
-            <ListItem>Неделя</ListItem>
+            <ListItem>Week</ListItem>
           </ListItemButton>
           <ListItemButton component={NavLink} to="/month">
-            <ListItem>Месяц</ListItem>
+            <ListItem>Month</ListItem>
           </ListItemButton>
           <ListItemButton component={NavLink} to="/year">
-            <ListItem>Год</ListItem>
+            <ListItem>Year</ListItem>
           </ListItemButton>
         </List>
         <Divider />
         <List>
           <ListItemButton component={NavLink} to="/settings">
-            <ListItem>Настройки</ListItem>
+            <ListItem>Settings</ListItem>
           </ListItemButton>
         </List>
       </Drawer>
