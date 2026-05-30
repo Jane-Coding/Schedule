@@ -1,22 +1,40 @@
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
 
-function createData(subjectName, monday, tuesday, wednessday, thursday, friday, saturday, sunday) {
-  return { subjectName, monday, tuesday, wednessday, thursday, friday, saturday, sunday };
+function createData(
+  subjectName,
+  monday,
+  tuesday,
+  wednessday,
+  thursday,
+  friday,
+  saturday,
+  sunday,
+) {
+  return {
+    subjectName,
+    monday,
+    tuesday,
+    wednessday,
+    thursday,
+    friday,
+    saturday,
+    sunday,
+  };
 }
 
 const rows = [
-  createData('React', 60, 60, 60, 30, 20, 10),
-  createData('CS50', 60, 60, 60, 30, 20, 10),
-  createData('Japanese', 60, 60, 60, 30, 20, 10),
+  createData("React", 60, 60, 60, 30, 20, 10),
+  createData("CS50", 60, 60, 60, 30, 20, 10),
+  createData("Japanese", 60, 60, 60, 30, 20, 10),
 ];
 
-export default function DenseTable() {
+export default function WeekPage() {
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
@@ -36,7 +54,7 @@ export default function DenseTable() {
           {rows.map((row) => (
             <TableRow
               key={row.subjectName}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
               <TableCell component="th" scope="row">
                 {row.subjectName}
